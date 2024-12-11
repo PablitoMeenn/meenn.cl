@@ -74,7 +74,50 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 	
 	</head>
 	<body>
-
+		<style>
+			.countdown-container {
+				width: 100%;
+				max-width: 800px;
+				margin: 20px auto;
+				padding: 20px;
+				background: rgba(0, 0, 0, 0.5);
+				border-radius: 15px;
+				box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+				color: white;
+			}
+		
+			.countdown-title {
+				text-align: center;
+				margin-bottom: 30px;
+				font-size: 2em;
+			}
+		
+			.countdown-blocks {
+				display: flex;
+				justify-content: center;
+				gap: 20px;
+				flex-wrap: wrap;
+			}
+		
+			.time-block {
+				background: rgba(255, 255, 255, 0.1);
+				padding: 15px;
+				border-radius: 10px;
+				min-width: 80px;
+				text-align: center;
+			}
+		
+			.number {
+				font-size: 2.5em;
+				font-weight: bold;
+				margin-bottom: 5px;
+			}
+		
+			.label {
+				font-size: 1em;
+				text-transform: uppercase;
+			}
+		</style>
 	
 <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WRH3L2K"
@@ -129,7 +172,24 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 						<div class="display-tc animate-box" data-animate-effect="fadeIn">
 							<h1>Titulacion del Meenn</h1>
 							<h2>Vamos a Celebrar Todos Juntos en mi Casa</h2>
-							<div class="simply-countdown simply-countdown-one"></div>
+							<div class="countdown-blocks">
+								<div class="time-block">
+									<div id="countdown-days" class="number">00</div>
+									<div class="label">Días</div>
+								</div>
+								<div class="time-block">
+									<div id="countdown-hours" class="number">00</div>
+									<div class="label">Horas</div>
+								</div>
+								<div class="time-block">
+									<div id="countdown-minutes" class="number">00</div>
+									<div class="label">Minutos</div>
+								</div>
+								<div class="time-block">
+									<div id="countdown-seconds" class="number">00</div>
+									<div class="label">Segundos</div>
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -949,30 +1009,44 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 	<script src="js/jquery.magnific-popup.min.js"></script>
 	<script src="js/magnific-popup-options.js"></script>
 
-	<!-- // <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/0.0.1/prism.min.js"></script> -->
-	<script src="js/simplyCountdown.js"></script>
+
 	<!-- Main -->
 	<script src="js/main.js"></script>
 
-	<script>
-    var d = new Date(new Date().getTime() + 200 * 120 * 120 * 2000);
+<!-- Agrega este JavaScript al final de tu página, justo antes del cierre de </body> -->
+<script>
+    // Aquí puedes modificar la fecha objetivo
+    const fechaObjetivo = new Date('2025-01-04T15:00:00'); // Formato: YYYY-MM-DD HH:mm:ss
 
-    // default example
-    simplyCountdown('.simply-countdown-one', {
-        year: d.getFullYear(),
-        month: d.getMonth() + 1,
-        day: d.getDate()
-    });
+    function updateCountdown() {
+        const now = new Date();
+        const diff = fechaObjetivo - now;
 
-    //jQuery example
-    $('#simply-countdown-losange').simplyCountdown({
-        year: d.getFullYear(),
-        month: d.getMonth() + 1,
-        day: d.getDate(),
-        enableUtc: false
-    });
+        // Si la fecha ya pasó
+        if (diff < 0) {
+            document.getElementById('countdown-days').textContent = '00';
+            document.getElementById('countdown-hours').textContent = '00';
+            document.getElementById('countdown-minutes').textContent = '00';
+            document.getElementById('countdown-seconds').textContent = '00';
+            return;
+        }
+
+        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+        document.getElementById('countdown-days').textContent = days.toString().padStart(2, '0');
+        document.getElementById('countdown-hours').textContent = hours.toString().padStart(2, '0');
+        document.getElementById('countdown-minutes').textContent = minutes.toString().padStart(2, '0');
+        document.getElementById('countdown-seconds').textContent = seconds.toString().padStart(2, '0');
+    }
+
+    // Actualizar cada segundo
+    setInterval(updateCountdown, 1000);
+    // Actualizar inmediatamente al cargar
+    updateCountdown();
 </script>
-
 	</body>
 </html>
 
