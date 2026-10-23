@@ -1,3 +1,7 @@
+/* style.scss: estilos propios del sitio (basado en la plantilla fh5co de FreeHTML5.co). */
+/* Al compilarlo se genera css/style.css. Los comentarios de bloque (barra-asterisco) se conservan en el CSS; los // no. */
+
+/* ===== VARIABLES: fuentes, colores (#F14E95 = rosado principal) y ajustes de Bootstrap ===== */
 $font-primary: 'Work Sans', Arial, sans-serif;
 $font-secondary: 'Sacramento', Arial, serif;
 
@@ -25,6 +29,7 @@ $form-group-margin-bottom:       30px !default;
 
 
 
+/* ===== MIXINS: atajos reutilizables (transform, bordes redondeados, flexbox...) ===== */
 // Mixin
 @mixin translateX($translatex) {
 	-moz-transform: translateX($translatex);
@@ -66,6 +71,7 @@ $form-group-margin-bottom:       30px !default;
 	-moz-flex-wrap: wrap; 
 }
 
+/* ===== FUENTE DE ÍCONOS icomoon (corazón, reloj, calendario, redes sociales...) ===== */
 @font-face {
 	font-family: 'icomoon';
 	src:url('../fonts/icomoon/icomoon.eot?srf3rx');
@@ -93,6 +99,7 @@ $form-group-margin-bottom:       30px !default;
 	
 }
 
+/* Importa mixins y variables de Bootstrap */
 // Import 
 @import 'bootstrap/mixins';
 @import 'bootstrap/variables';
@@ -106,6 +113,7 @@ $form-group-margin-bottom:       30px !default;
 *
 * ======================================================= */
 
+/* ----- ESTILOS GENERALES: tipografía y color del texto de todo el sitio ----- */
 body {
 	font-family: $font-primary;
 	font-weight: 400;
@@ -114,6 +122,7 @@ body {
 	color: #828282;
 	background: #fff;
 }
+/* Contenedor principal #page (y oscurecido cuando el menú lateral del celular está abierto) */
 #page {
 	position: relative;
 	overflow-x: hidden;
@@ -137,6 +146,7 @@ body {
 		}
 	}
 }
+/* Enlaces: color rosado principal */
 a {
 	color: $brand-primary;
 	@include transition(.5s);
@@ -146,6 +156,7 @@ a {
 		text-decoration: none;
 	}
 }
+/* Párrafos y títulos */
 p {
 	margin-bottom: 20px;
 }
@@ -156,6 +167,7 @@ h1, h2, h3, h4, h5, h6, figure {
 	font-weight: 400;
 	margin: 0 0 20px 0;
 }
+/* Color al seleccionar texto con el mouse */
 ::-webkit-selection {
   color: $brand-white;
   background: $brand-primary;
@@ -170,6 +182,7 @@ h1, h2, h3, h4, h5, h6, figure {
   background: $brand-primary;
 }
 
+/* ===== MENÚ DE NAVEGACIÓN (.fh5co-nav): logo, enlaces, submenús y botón destacado ===== */
 .fh5co-nav {
 	position: absolute;
 	top: 0;
@@ -313,6 +326,7 @@ h1, h2, h3, h4, h5, h6, figure {
 // 	background-repeat: no-repeat;
 // 	position: relative;
 // }
+/* ===== FONDOS CON IMAGEN (secciones Programación y Contadores) ===== */
 #fh5co-counter,
 #fh5co-event,
 .fh5co-bg {
@@ -328,6 +342,7 @@ h1, h2, h3, h4, h5, h6, figure {
 	position: relative;
 }
 
+/* Bloque de video con botón de play (no se usa actualmente en index.html) */
 .fh5co-video {
 	height: 450px;
 	overflow: hidden;
@@ -382,6 +397,7 @@ h1, h2, h3, h4, h5, h6, figure {
 		}
 	}
 }
+/* ===== PORTADA (.fh5co-cover): alto, imagen de fondo y capa oscura ===== */
 .fh5co-cover {
 	height: 900px;
 	background-size: cover;
@@ -432,6 +448,7 @@ h1, h2, h3, h4, h5, h6, figure {
 	}
 }
 
+/* ===== SECCIONES PROGRAMACIÓN (#fh5co-event) y CONTADORES (#fh5co-counter): alto, títulos, capa oscura y tarjetas del Asado/Carrete ===== */
 #fh5co-counter,
 #fh5co-event {
 	height: 850px;
@@ -508,6 +525,7 @@ h1, h2, h3, h4, h5, h6, figure {
 }
 
 
+/* Alto propio de la sección Contadores */
 #fh5co-counter{
 	height: 600px;
 	@media screen and (max-width: $screen-sm) {
@@ -516,6 +534,7 @@ h1, h2, h3, h4, h5, h6, figure {
 }
 
 
+/* ===== LÍNEA DE TIEMPO (sección Historia): línea central, recuadros con flecha y fotos redondas ===== */
 // TIMELINE
 .timeline {
     list-style: none;
@@ -627,6 +646,7 @@ h1, h2, h3, h4, h5, h6, figure {
 	}
 }
 
+/* Título, fecha y texto de cada hito */
 .timeline-title {
     margin-top: 0;
 }
@@ -647,6 +667,7 @@ h1, h2, h3, h4, h5, h6, figure {
   margin-top: 5px;
 }
 
+/* Tablets (menos de 992px): la línea pasa a la izquierda y todos los hitos van a la derecha */
 @media (max-width: $screen-md) {
 	ul.timeline:before {
 	  left: 90px;
@@ -685,6 +706,7 @@ h1, h2, h3, h4, h5, h6, figure {
 }
 
 
+/* ===== GALERÍA DE FOTOS (#fh5co-gallery-list): 3 por fila en PC, 2 en tablet, 1 en celular ===== */
 // GALLERY
 #fh5co-gallery-list {
 	@include flexwrap;
@@ -779,6 +801,7 @@ h1, h2, h3, h4, h5, h6, figure {
 }
 
 
+/* Mapa (no se usa actualmente) */
 // Map
 #map {
 	width: 100%;
@@ -789,6 +812,7 @@ h1, h2, h3, h4, h5, h6, figure {
 	}
 }
 
+/* ===== ÍCONOS DE REDES SOCIALES (pie de página) ===== */
 .fh5co-social-icons {
 	margin: 0;
 	padding: 0;
@@ -809,6 +833,7 @@ h1, h2, h3, h4, h5, h6, figure {
 	}
 }
 
+/* Información de contacto con íconos (no se usa actualmente) */
 .fh5co-contact-info {
 	ul {
 		padding: 0;
@@ -854,6 +879,7 @@ h1, h2, h3, h4, h5, h6, figure {
 }
 
 
+/* Etiquetas de formularios */
 form {
 	label {
 		font-weight: normal!important;
@@ -863,6 +889,7 @@ form {
 
 #fh5co-header,
 #fh5co-counter,
+/* ===== TEXTOS DE LA PORTADA: título grande (h1), subtítulo (h2) y botones ===== */
 .fh5co-cover {
 	.display-tc {
 		display: table-cell!important;
@@ -909,6 +936,7 @@ form {
 		}
 	}
 }
+/* ===== CONTADORES: números animados, etiquetas e íconos ===== */
 #fh5co-counter {	
 	text-align: center;
 	.counter {
@@ -950,6 +978,7 @@ form {
 }
 
 
+/* Cuenta regresiva de la plantilla original (simplyCountdown, no se usa; la actual está en index.html) */
 // COUNTDOWN CUSTOM
 .simply-countdown {
     /* The countdown */
@@ -968,6 +997,7 @@ form {
     animation: pulse 1s ease infinite, 
 }
 
+/* Animación de latido (pulse), usada por el corazón de la sección Invitación */
 @keyframes pulse {
   0% { transform: scale(1); }
   50% { transform: scale(1.05); }
@@ -1001,6 +1031,7 @@ form {
     /* words */
 }
 
+/* ===== ESPACIADO VERTICAL DE TODAS LAS SECCIONES ===== */
 #fh5co-testimonial,
 #fh5co-services,
 #fh5co-started,
@@ -1017,11 +1048,13 @@ form {
 	}
 }
 
+/* Fondo gris claro para secciones alternas (Galería, Detalles del evento) */
 .fh5co-section-gray{
 	background: rgba($brand-black,.04);
 }
 
 
+/* ===== SECCIÓN INVITACIÓN: fotos y textos de Karencita y Meenn ===== */
 // COUPLE
 .couple-wrap{
 	width: 90%;
@@ -1031,6 +1064,7 @@ form {
 		width: 100%;
 	}
 }
+/* Corazón animado entre las dos fotos (se oculta en celular) */
 .heart{
 	position: absolute;
 	top: 4em;
@@ -1049,6 +1083,7 @@ form {
 		display: none;
 	}
 }
+/* Cada mitad (izquierda / derecha): nombre, foto redonda y texto */
 .couple-half{
 	width: 50%;
 	float: left;
@@ -1115,6 +1150,7 @@ form {
 	}
 }
 
+/* ===== CAJAS CENTRADAS CON ÍCONO (.feature-center, usadas en Contadores) ===== */
 .feature-center {
 	text-align: center;
 	padding-left: 20px;
@@ -1155,6 +1191,7 @@ form {
 }
 
 
+/* ===== TÍTULOS DE SECCIÓN (.fh5co-heading): título rosado, párrafo y subtítulo pequeño ===== */
 .fh5co-heading {
 	margin-bottom: 5em;
 	&.fh5co-heading-sm {
@@ -1185,6 +1222,7 @@ form {
 	}
 }
 
+/* ===== MENSAJES DE AMISTAD (carrusel de testimonios): foto, nombre y mensaje ===== */
 #fh5co-testimonial {
 	.wrap-testimony{
 		position: relative;
@@ -1260,6 +1298,7 @@ form {
 	}
 }
 
+/* ===== DETALLES CON ÍCONO A LA IZQUIERDA (.feature-left, sección Detalles del evento) ===== */
 .feature-left {
 	float: left;
 	width: 100%;
@@ -1308,6 +1347,7 @@ form {
 	}
 }
 
+/* ===== SECCIÓN #fh5co-started con formulario (no se usa actualmente) ===== */
 #fh5co-started {
 	position: relative;
 	.overlay {
@@ -1384,6 +1424,7 @@ form {
 	}
 }
 
+/* ===== PIE DE PÁGINA (copyright) ===== */
 #fh5co-footer {
 
 	.copyright {
@@ -1401,6 +1442,7 @@ form {
 	}
 }
 
+/* ===== PUNTOS DEL CARRUSEL (Owl Carousel) ===== */
 // Owl 
 .owl-carousel .owl-controls .owl-dot {
 	span {
@@ -1422,6 +1464,7 @@ form {
 	}
 }
 
+/* ===== MENÚ LATERAL PARA CELULAR (offcanvas) ===== */
 // off canvas
 #fh5co-offcanvas {
 	position: absolute;
@@ -1486,6 +1529,7 @@ form {
 	}
 }
 
+/* Texto en mayúsculas (utilidad) */
 .uppercase {
 	font-size: 14px;
 	color: $brand-black;
@@ -1493,6 +1537,7 @@ form {
 	font-weight: 700;
 	text-transform: uppercase;
 }
+/* ===== BOTÓN "VOLVER ARRIBA" (.gototop) ===== */
 .gototop {
 	position: fixed;
 	bottom: 20px;
@@ -1528,6 +1573,7 @@ form {
 
 
 
+/* ===== BOTÓN HAMBURGUESA del menú móvil (3 rayas que se convierten en X) ===== */
 // Burger Menu
 .fh5co-nav-toggle {
   width:25px;
@@ -1627,6 +1673,7 @@ form {
   }
 }
 
+/* ===== BOTONES (.btn) y sus colores ===== */
 // Buttons
 .btn {
 	margin-right: 4px;
@@ -1771,6 +1818,7 @@ form {
 		}
 	}
 }
+/* ===== CAMPOS DE FORMULARIO ===== */
 // Form Input Field
 .form-control {
 	box-shadow: none;
@@ -1786,6 +1834,7 @@ form {
   }
 }
 
+/* Utilidades de espaciado inferior */
 .row-pb-md {
 	padding-bottom: 4em!important;
 }
@@ -1793,6 +1842,7 @@ form {
 	padding-bottom: 2em!important;
 }
 
+/* ===== PANTALLA DE CARGA (images/loader.gif) ===== */
 .fh5co-loader {
 	position: fixed;
 	left: 0px;
@@ -1803,6 +1853,7 @@ form {
 	background: url(../images/loader.gif) center no-repeat #fff;
 }
 
+/* Elementos con animación de aparición: ocultos hasta que se hace scroll (los anima js/main.js) */
 .animate-box {
 	.js & {
 		opacity: 0;

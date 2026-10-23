@@ -1,3 +1,7 @@
+/* style.css: estilos propios del sitio (basado en la plantilla fh5co de FreeHTML5.co). */
+/* NOTA: este archivo se genera desde sass/style.scss. Los comentarios de sección también están allá, así que se mantienen al recompilar (los comentarios internos de esta hoja no). */
+
+/* ===== FUENTE DE ÍCONOS icomoon (corazón, reloj, calendario, redes sociales...) ===== */
 @font-face {
   font-family: 'icomoon';
   src: url("../fonts/icomoon/icomoon.eot?srf3rx");
@@ -10,6 +14,7 @@
 * 	Template Style 
 *
 * ======================================================= */
+/* ----- ESTILOS GENERALES: tipografía y color del texto de todo el sitio ----- */
 body {
   font-family: "Work Sans", Arial, sans-serif;
   font-weight: 400;
@@ -19,6 +24,7 @@ body {
   background: #fff;
 }
 
+/* Contenedor principal #page */
 #page {
   position: relative;
   overflow-x: hidden;
@@ -28,6 +34,7 @@ body {
   -o-transition: 0.5s;
   transition: 0.5s;
 }
+/* Oscurece la página cuando el menú lateral del celular (offcanvas) está abierto */
 .offcanvas #page {
   overflow: hidden;
   position: absolute;
@@ -46,6 +53,7 @@ body {
   content: "";
 }
 
+/* Enlaces: color rosado principal (#F14E95) */
 a {
   color: #F14E95;
   -webkit-transition: 0.5s;
@@ -58,6 +66,7 @@ a:hover, a:active, a:focus {
   text-decoration: none;
 }
 
+/* Párrafos y títulos */
 p {
   margin-bottom: 20px;
 }
@@ -69,6 +78,7 @@ h1, h2, h3, h4, h5, h6, figure {
   margin: 0 0 20px 0;
 }
 
+/* Color al seleccionar texto con el mouse */
 ::-webkit-selection {
   color: #fff;
   background: #F14E95;
@@ -84,6 +94,7 @@ h1, h2, h3, h4, h5, h6, figure {
   background: #F14E95;
 }
 
+/* ===== MENÚ DE NAVEGACIÓN (.fh5co-nav) ===== */
 .fh5co-nav {
   position: absolute;
   top: 0;
@@ -98,6 +109,7 @@ h1, h2, h3, h4, h5, h6, figure {
     padding: 20px 0;
   }
 }
+/* Logo con fuente Sacramento */
 .fh5co-nav #fh5co-logo {
   font-size: 40px;
   margin: 0;
@@ -105,6 +117,7 @@ h1, h2, h3, h4, h5, h6, figure {
   line-height: 40px;
   font-family: "Sacramento", Arial, serif;
 }
+/* Enlaces del menú; en celular (menos de 768px) el menú se oculta */
 .fh5co-nav a {
   padding: 5px 10px;
   color: #fff;
@@ -136,6 +149,7 @@ h1, h2, h3, h4, h5, h6, figure {
 .fh5co-nav ul li a:hover, .fh5co-nav ul li a:focus, .fh5co-nav ul li a:active {
   color: white;
 }
+/* Submenús desplegables (dropdown) */
 .fh5co-nav ul li.has-dropdown {
   position: relative;
 }
@@ -195,6 +209,7 @@ h1, h2, h3, h4, h5, h6, figure {
 .fh5co-nav ul li.has-dropdown:hover a, .fh5co-nav ul li.has-dropdown:focus a {
   color: #fff;
 }
+/* Botón destacado del menú (btn-cta) y elemento activo */
 .fh5co-nav ul li.btn-cta a {
   color: #F14E95;
 }
@@ -222,6 +237,7 @@ h1, h2, h3, h4, h5, h6, figure {
   color: #fff !important;
 }
 
+/* ===== FONDOS CON IMAGEN (secciones Programación y Contadores) ===== */
 #fh5co-counter,
 #fh5co-event,
 .fh5co-bg {
@@ -238,6 +254,7 @@ h1, h2, h3, h4, h5, h6, figure {
   position: relative;
 }
 
+/* Bloque de video con botón de play (no se usa actualmente en index.html) */
 .fh5co-video {
   height: 450px;
   overflow: hidden;
@@ -295,6 +312,7 @@ h1, h2, h3, h4, h5, h6, figure {
   transform: scale(1.2);
 }
 
+/* ===== PORTADA (.fh5co-cover): alto, imagen de fondo y capa oscura ===== */
 .fh5co-cover {
   height: 900px;
   background-size: cover;
@@ -353,6 +371,7 @@ h1, h2, h3, h4, h5, h6, figure {
   }
 }
 
+/* ===== SECCIONES PROGRAMACIÓN (#fh5co-event) y CONTADORES (#fh5co-counter): alto, títulos y capa oscura ===== */
 #fh5co-counter,
 #fh5co-event {
   height: 850px;
@@ -400,6 +419,7 @@ h1, h2, h3, h4, h5, h6, figure {
     height: inherit;
   }
 }
+/* Tarjetas del Asado y del Carrete (.event-wrap) */
 #fh5co-counter .event-wrap,
 #fh5co-event .event-wrap {
   border: 2px solid rgba(255, 255, 255, 0.5);
@@ -446,6 +466,7 @@ h1, h2, h3, h4, h5, h6, figure {
   margin-bottom: 30px;
 }
 
+/* Alto propio de la sección Contadores */
 #fh5co-counter {
   height: 600px;
 }
@@ -455,11 +476,13 @@ h1, h2, h3, h4, h5, h6, figure {
   }
 }
 
+/* ===== LÍNEA DE TIEMPO (sección Historia) ===== */
 .timeline {
   list-style: none;
   padding: 20px 0 20px;
   position: relative;
 }
+/* Línea vertical gris al centro */
 .timeline:before {
   top: 0;
   bottom: 0;
@@ -475,6 +498,7 @@ h1, h2, h3, h4, h5, h6, figure {
     margin-left: -64px;
   }
 }
+/* Cada hito de la línea de tiempo */
 .timeline > li {
   margin-bottom: 20px;
   position: relative;
@@ -486,6 +510,7 @@ h1, h2, h3, h4, h5, h6, figure {
 .timeline > li:after {
   clear: both;
 }
+/* Recuadro de texto de cada hito, con flechita apuntando a la foto */
 .timeline > li > .timeline-panel {
   width: 40%;
   float: left;
@@ -530,6 +555,7 @@ h1, h2, h3, h4, h5, h6, figure {
     top: 31px;
   }
 }
+/* Foto redonda de cada hito (.timeline-badge) */
 .timeline > li > .timeline-badge {
   background-size: cover;
   background-position: top center;
@@ -559,6 +585,7 @@ h1, h2, h3, h4, h5, h6, figure {
     margin-left: -20px !important;
   }
 }
+/* Hitos invertidos: el recuadro va al lado derecho */
 .timeline > li.timeline-inverted > .timeline-panel {
   float: right;
 }
@@ -575,6 +602,7 @@ h1, h2, h3, h4, h5, h6, figure {
   right: auto;
 }
 
+/* Título, fecha y texto de cada hito */
 .timeline-title {
   margin-top: 0;
 }
@@ -596,6 +624,7 @@ h1, h2, h3, h4, h5, h6, figure {
   margin-top: 5px;
 }
 
+/* Tablets (menos de 992px): la línea pasa a la izquierda y todos los hitos van a la derecha */
 @media (max-width: 992px) {
   ul.timeline:before {
     left: 90px;
@@ -631,6 +660,7 @@ h1, h2, h3, h4, h5, h6, figure {
     right: auto;
   }
 }
+/* ===== GALERÍA DE FOTOS (#fh5co-gallery-list) ===== */
 #fh5co-gallery-list {
   flex-wrap: wrap;
   -webkit-flex-wrap: wrap;
@@ -675,6 +705,7 @@ h1, h2, h3, h4, h5, h6, figure {
   width: 100%;
   display: block;
 }
+/* Capa oscura sobre cada foto (se oscurece más al pasar el mouse) */
 #fh5co-gallery-list li a:before {
   position: absolute;
   top: 0;
@@ -695,6 +726,7 @@ h1, h2, h3, h4, h5, h6, figure {
 #fh5co-gallery-list li a:hover:before {
   background: rgba(0, 0, 0, 0.5);
 }
+/* Texto sobre la foto (categoría + título) */
 #fh5co-gallery-list li a .case-studies-summary {
   width: auto;
   bottom: 2em;
@@ -725,6 +757,7 @@ h1, h2, h3, h4, h5, h6, figure {
     font-size: 20px;
   }
 }
+/* Ancho de cada foto: 3 por fila en PC, 2 en tablet, 1 en celular */
 #fh5co-gallery-list li.one-third {
   width: 32.3%;
 }
@@ -739,6 +772,7 @@ h1, h2, h3, h4, h5, h6, figure {
   }
 }
 
+/* Mapa (no se usa actualmente) */
 #map {
   width: 100%;
   height: 500px;
@@ -750,6 +784,7 @@ h1, h2, h3, h4, h5, h6, figure {
   }
 }
 
+/* ===== ÍCONOS DE REDES SOCIALES (pie de página) ===== */
 .fh5co-social-icons {
   margin: 0;
   padding: 0;
@@ -776,6 +811,7 @@ h1, h2, h3, h4, h5, h6, figure {
   font-size: 20px;
 }
 
+/* Información de contacto con íconos (no se usa actualmente) */
 .fh5co-contact-info ul {
   padding: 0;
   margin: 0;
@@ -819,10 +855,12 @@ h1, h2, h3, h4, h5, h6, figure {
   content: "\e9af";
 }
 
+/* Etiquetas de formularios */
 form label {
   font-weight: normal !important;
 }
 
+/* ===== TEXTOS DE LA PORTADA: título grande (h1), subtítulo (h2) y botones ===== */
 #fh5co-header .display-tc,
 #fh5co-counter .display-tc,
 .fh5co-cover .display-tc {
@@ -893,6 +931,7 @@ form label {
   box-shadow: 0px 14px 30px -15px rgba(0, 0, 0, 0.75) !important;
 }
 
+/* ===== CONTADORES: números animados, etiquetas e íconos ===== */
 #fh5co-counter {
   text-align: center;
 }
@@ -932,6 +971,7 @@ form label {
   margin-left: 3px;
 }
 
+/* Cuenta regresiva de la plantilla original (simplyCountdown, no se usa; la actual está en index.html) */
 .simply-countdown {
   /* The countdown */
   margin-bottom: 2em;
@@ -952,6 +992,7 @@ form label {
   animation: pulse 1s ease infinite;
 }
 
+/* Animación de latido (pulse), usada por el corazón de la sección Invitación */
 @keyframes pulse {
   0% {
     transform: scale(1);
@@ -990,6 +1031,7 @@ form label {
   /* words */
 }
 
+/* ===== ESPACIADO VERTICAL DE TODAS LAS SECCIONES ===== */
 #fh5co-testimonial,
 #fh5co-services,
 #fh5co-started,
@@ -1016,10 +1058,12 @@ form label {
   }
 }
 
+/* Fondo gris claro para secciones alternas (Galería, Detalles del evento) */
 .fh5co-section-gray {
   background: rgba(0, 0, 0, 0.04);
 }
 
+/* ===== SECCIÓN INVITACIÓN: fotos y textos de Karencita y Meenn ===== */
 .couple-wrap {
   width: 90%;
   margin: 0 auto;
@@ -1031,6 +1075,7 @@ form label {
   }
 }
 
+/* Corazón animado entre las dos fotos (se oculta en celular) */
 .heart {
   position: absolute;
   top: 4em;
@@ -1055,6 +1100,7 @@ form label {
   }
 }
 
+/* Cada mitad (izquierda / derecha) */
 .couple-half {
   width: 50%;
   float: left;
@@ -1064,11 +1110,13 @@ form label {
     width: 100%;
   }
 }
+/* Nombre de cada persona con fuente Sacramento */
 .couple-half h3 {
   font-family: "Sacramento", Arial, serif;
   color: #F14E95;
   font-size: 30px;
 }
+/* Fotos redondas */
 .couple-half .groom, .couple-half .bride {
   float: left;
   -webkit-border-radius: 50%;
@@ -1105,6 +1153,7 @@ form label {
   float: left;
   margin-left: 5px;
 }
+/* Textos al lado de cada foto */
 .couple-half .desc-groom {
   padding-right: 180px;
   text-align: right;
@@ -1128,6 +1177,7 @@ form label {
   }
 }
 
+/* ===== CAJAS CENTRADAS CON ÍCONO (.feature-center, usadas en Contadores) ===== */
 .feature-center {
   text-align: center;
   padding-left: 20px;
@@ -1170,6 +1220,7 @@ form label {
   color: #5d5d5d;
 }
 
+/* ===== TÍTULOS DE SECCIÓN (.fh5co-heading): título rosado, párrafo y subtítulo pequeño ===== */
 .fh5co-heading {
   margin-bottom: 5em;
 }
@@ -1202,6 +1253,7 @@ form label {
   color: rgba(0, 0, 0, 0.4);
 }
 
+/* ===== MENSAJES DE AMISTAD (carrusel de testimonios) ===== */
 #fh5co-testimonial .wrap-testimony {
   position: relative;
 }
@@ -1219,6 +1271,7 @@ form label {
   color: #F14E95;
   font-weight: 300;
 }
+/* Foto redonda de la persona */
 #fh5co-testimonial .wrap-testimony .testimony-slide figure {
   margin-bottom: 10px;
   display: -moz-inline-stack;
@@ -1236,6 +1289,7 @@ form label {
   -ms-border-radius: 50%;
   border-radius: 50%;
 }
+/* Mensaje en cursiva */
 #fh5co-testimonial .wrap-testimony .testimony-slide blockquote {
   border: none;
   margin: 30px auto;
@@ -1260,6 +1314,7 @@ form label {
 #fh5co-testimonial .wrap-testimony .testimony-slide.active {
   display: block;
 }
+/* Flechas del carrusel */
 #fh5co-testimonial .wrap-testimony .arrow-thumb {
   position: absolute;
   top: 40%;
@@ -1274,6 +1329,7 @@ form label {
   text-decoration: none;
 }
 
+/* ===== DETALLES CON ÍCONO A LA IZQUIERDA (.feature-left, sección Detalles del evento) ===== */
 .feature-left {
   float: left;
   width: 100%;
@@ -1327,6 +1383,7 @@ form label {
   margin-bottom: 10px;
 }
 
+/* ===== SECCIÓN #fh5co-started con formulario (no se usa actualmente) ===== */
 #fh5co-started {
   position: relative;
 }
@@ -1396,6 +1453,7 @@ form label {
   margin-bottom: 0;
 }
 
+/* ===== PIE DE PÁGINA (copyright) ===== */
 @media screen and (max-width: 768px) {
   #fh5co-footer .copyright .pull-left,
   #fh5co-footer .copyright .pull-right {
@@ -1407,6 +1465,7 @@ form label {
   display: block;
 }
 
+/* ===== PUNTOS DEL CARRUSEL (Owl Carousel) ===== */
 .owl-carousel .owl-controls .owl-dot span {
   background: #e6e6e6;
 }
@@ -1421,6 +1480,7 @@ form label {
   border: 2px solid #F14E95;
 }
 
+/* ===== MENÚ LATERAL PARA CELULAR (offcanvas) ===== */
 #fh5co-offcanvas {
   position: absolute;
   z-index: 1901;
@@ -1499,6 +1559,7 @@ form label {
   transform: rotate(-180deg);
 }
 
+/* Texto en mayúsculas (utilidad) */
 .uppercase {
   font-size: 14px;
   color: #000;
@@ -1507,6 +1568,7 @@ form label {
   text-transform: uppercase;
 }
 
+/* ===== BOTÓN "VOLVER ARRIBA" (.gototop) ===== */
 .gototop {
   position: fixed;
   bottom: 20px;
@@ -1544,6 +1606,7 @@ form label {
   outline: none;
 }
 
+/* ===== BOTÓN HAMBURGUESA del menú móvil (3 rayas que se convierten en X) ===== */
 .fh5co-nav-toggle {
   width: 25px;
   height: 25px;
@@ -1644,6 +1707,7 @@ form label {
   }
 }
 
+/* ===== BOTONES (.btn) y sus colores ===== */
 .btn {
   margin-right: 4px;
   margin-bottom: 4px;
@@ -1670,6 +1734,7 @@ form label {
   outline: none !important;
 }
 
+/* Botón rosado principal */
 .btn-primary {
   background: #F14E95;
   color: #fff;
@@ -1689,6 +1754,7 @@ form label {
   color: #fff;
 }
 
+/* Botones verde (success), celeste (info), naranjo (warning) y rojo (danger) */
 .btn-success {
   background: #5cb85c;
   color: #fff;
@@ -1765,6 +1831,7 @@ form label {
   color: #fff;
 }
 
+/* Botón con solo borde y botón con flecha */
 .btn-outline {
   background: none;
   border: 2px solid gray;
@@ -1804,6 +1871,7 @@ form label {
   opacity: 1;
 }
 
+/* ===== CAMPOS DE FORMULARIO ===== */
 .form-control {
   box-shadow: none;
   background: transparent;
@@ -1818,6 +1886,7 @@ form label {
   border-color: #F14E95;
 }
 
+/* Utilidades de espaciado inferior */
 .row-pb-md {
   padding-bottom: 4em !important;
 }
@@ -1826,6 +1895,7 @@ form label {
   padding-bottom: 2em !important;
 }
 
+/* ===== PANTALLA DE CARGA (images/loader.gif) ===== */
 .fh5co-loader {
   position: fixed;
   left: 0px;
@@ -1836,6 +1906,7 @@ form label {
   background: url(../images/loader.gif) center no-repeat #fff;
 }
 
+/* Elementos con animación de aparición: ocultos hasta que se hace scroll (los anima js/main.js) */
 .js .animate-box {
   opacity: 0;
 }

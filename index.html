@@ -1,9 +1,11 @@
 <!DOCTYPE html>
+<!-- Etiqueta <html> con clases según la versión de Internet Explorer (compatibilidad con navegadores antiguos) -->
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
 	<head>
+	<!-- ===== CABECERA (HEAD): configuración, estilos y scripts que se cargan antes de mostrar la página ===== -->
 	<!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -12,6 +14,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 })(window,document,'script','dataLayer','GTM-WRH3L2K');</script>
 	<!-- End Google Tag Manager -->
 	
+	<!-- Configuración básica: codificación, título de la pestaña, diseño adaptable a celular y datos para buscadores (SEO) -->
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>Meenn</title>
@@ -19,6 +22,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 	<meta name="description" content="Fotos de INACAP" />
 	<meta name="keywords" content="Meenn Pablito PablitoMeenn Melacorneta INACAP" />
 	<meta name="author" content="Pablito Meenn" />
+    <!-- Ícono que aparece en la pestaña del navegador -->
     <link rel="shortcut icon" href="favicon.ico" />
   	<!-- Facebook and Twitter integration -->
 	<meta property="og:title" content=""/>
@@ -31,9 +35,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 	<meta name="twitter:url" content="" />
 	<meta name="twitter:card" content="" />
 
+	<!-- Fuentes de Google: Work Sans (texto general) y Sacramento (títulos con letra manuscrita) -->
 	<link href='https://fonts.googleapis.com/css?family=Work+Sans:400,300,600,400italic,700' rel='stylesheet' type='text/css'>
 	<link href="https://fonts.googleapis.com/css?family=Sacramento" rel="stylesheet">
 	
+	<!-- ===== HOJAS DE ESTILO (carpeta css/) ===== -->
 	<!-- Animate.css -->
 	<link rel="stylesheet" href="css/animate.css">
 	<!-- Icomoon Icon Fonts-->
@@ -74,7 +80,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 	
 	</head>
 	<body>
+		<!-- Estilos de la cuenta regresiva (bloques Días / Horas / Minutos / Segundos de la portada) -->
 		<style>
+			/* Contenedor general de la cuenta regresiva (no se usa actualmente) */
 			.countdown-container {
 				width: 100%;
 				max-width: 800px;
@@ -86,12 +94,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 				color: white;
 			}
 		
+			/* Título de la cuenta regresiva (no se usa actualmente) */
 			.countdown-title {
 				text-align: center;
 				margin-bottom: 30px;
 				font-size: 2em;
 			}
 		
+			/* Fila que agrupa los 4 bloques de tiempo, centrados */
 			.countdown-blocks {
 				display: flex;
 				justify-content: center;
@@ -99,6 +109,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 				flex-wrap: wrap;
 			}
 		
+			/* Cada bloque individual (Días, Horas, Minutos, Segundos) */
 			.time-block {
 				background: rgba(255, 255, 255, 0.1);
 				padding: 15px;
@@ -107,6 +118,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 				text-align: center;
 			}
 		
+			/* Número grande del bloque (lo actualiza el JavaScript del final) */
 			.number {
 				font-size: 2.5em;
 				font-weight: bold;
@@ -114,6 +126,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 				color: rgba(10, 10, 15, 0.473);
 			}
 		
+			/* Texto bajo el número: DÍAS, HORAS, MINUTOS, SEGUNDOS */
 			.label {
 				font-size: 1em;
 				text-transform: uppercase;
@@ -125,15 +138,20 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 
+	<!-- Pantalla de carga (gif animado) que se muestra mientras carga la página -->
 	<div class="fh5co-loader"></div>
 	
+	<!-- Contenedor principal de toda la página -->
 	<div id="page">
+	<!-- ===== MENÚ DE NAVEGACIÓN superior (logo + enlaces) ===== -->
 	<nav class="fh5co-nav" role="navigation">
 		<div class="container">
 			<div class="row">
+				<!-- Logo / nombre del sitio -->
 				<div class="col-xs-2">
 					<div id="fh5co-logo"><a href="index.html">Atina Meenn. No La Venda.</a></div>
 				</div>
+					<!-- Enlaces del menú (solo "Inicio" está activo; el resto está comentado) -->
 					<div class="col-xs-10 text-right menu-1">
 					<ul>
 						<li><a href="index.html">Inicio</a></li>
@@ -164,6 +182,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 		</div>
 	</nav>
 
+	<!-- ===== PORTADA: imagen de fondo, título principal y cuenta regresiva ===== -->
 	<header id="fh5co-header" class="fh5co-cover" role="banner" style="background-image:url(images/img_bg_2.jpg);" data-stellar-background-ratio="0.5">
 		<div class="overlay"></div>
 		<div class="container">
@@ -171,8 +190,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 				<div class="col-md-8 col-md-offset-2 text-center">
 					<div class="display-t">
 						<div class="display-tc animate-box" data-animate-effect="fadeIn">
+							<!-- Título y subtítulo de la portada -->
 							<h1>Titulacion del Meenn</h1>
 							<h2>Vamos a Celebrar Todos Juntos en mi Casa</h2>
+							<!-- Cuenta regresiva: los números los actualiza el script que está al final de este archivo -->
 							<div class="countdown-blocks">
 								<div class="time-block">
 									<div id="countdown-days" class="number">00</div>
@@ -198,6 +219,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 		</div>
 	</header>
 
+	<!-- ===== SECCIÓN INVITACIÓN: fecha/lugar y los mensajes de Karencita y Meenn ===== -->
 	<div id="fh5co-couple">
 		<div class="container">
 			<div class="row">
@@ -207,7 +229,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 					<p>Estan todos invitados a esta celebracion de mi Titulacion</p>
 				</div>
 			</div>
+			<!-- Fotos redondas y textos de las dos personas, con un corazón al centro -->
 			<div class="couple-wrap animate-box">
+				<!-- Mitad izquierda: Karencita -->
 				<div class="couple-half">
 					<div class="groom">
 						<img src="images/groom.jpg" alt="groom" class="img-responsive">
@@ -217,7 +241,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 						<p>Chicos... están todos cordialmente invitados a la casa de mi Meenn par así compartor y disfrutar juntos una hermosa celebración por su Titulación.</p>
 					</div>
 				</div>
+				<!-- Corazón animado entre ambas fotos -->
 				<p class="heart text-center"><i class="icon-heart2"></i></p>
+				<!-- Mitad derecha: Meenn -->
 				<div class="couple-half">
 					<div class="bride">
 						<img src="images/bride.jpg" alt="groom" class="img-responsive">
@@ -231,6 +257,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 		</div>
 	</div>
 
+	<!-- ===== SECCIÓN PROGRAMACIÓN: horarios del Asado y del Carrete (con imagen de fondo) ===== -->
 	<div id="fh5co-event" class="fh5co-bg" style="background-image:url(images/img_bg_3.jpg);">
 		<div class="overlay"></div>
 		<div class="container">
@@ -244,6 +271,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 				<div class="display-t">
 					<div class="display-tc">
 						<div class="col-md-10 col-md-offset-1">
+							<!-- Tarjeta: El Asado -->
 							<div class="col-md-6 col-sm-6 text-center">
 								<div class="event-wrap animate-box">
 									<h3>El Asado</h3>
@@ -259,6 +287,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 									<p>Tendremos carne para picar, ensaladas, alitas de pollo y choripanes.</p>
 								</div>
 							</div>
+							<!-- Tarjeta: El Carrete -->
 							<div class="col-md-6 col-sm-6 text-center">
 								<div class="event-wrap animate-box">
 									<h3>El Carrete</h3>
@@ -281,6 +310,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 		</div>
 	</div>
 
+	<!-- ===== SECCIÓN HISTORIA: línea de tiempo 2014 a 2018 en INACAP ===== -->
 	<div id="fh5co-couple-story">
 		<div class="container">
 			<div class="row">
@@ -292,7 +322,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 			</div>
 			<div class="row">
 				<div class="col-md-12 col-md-offset-0">
+					<!-- Línea de tiempo: cada <li> es un hito (foto redonda + título + fecha + texto); "timeline-inverted" lo pone al lado derecho -->
 					<ul class="timeline animate-box">
+						<!-- Hito 1: Primera Semana (15/03/2014) -->
 						<li class="animate-box">
 							<div class="timeline-badge" style="background-image:url(images/couple-1.jpg);"></div>
 							<div class="timeline-panel">
@@ -305,6 +337,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 								</div>
 							</div>
 						</li>
+						<!-- Hito 2: Primer Cumpleaños (26/05/2014) -->
 						<li class="timeline-inverted animate-box">
 							<div class="timeline-badge" style="background-image:url(images/couple-2.jpg);"></div>
 							<div class="timeline-panel">
@@ -317,6 +350,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 								</div>
 							</div>
 						</li>
+						<!-- Hito 3: Ver tu Primo en el LUN (22/04/2015) -->
 						<li class="animate-box">
 							<div class="timeline-badge" style="background-image:url(images/couple-3.jpg);"></div>
 							<div class="timeline-panel">
@@ -329,6 +363,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 								</div>
 							</div>
 						</li>
+						<!-- Hito 4: Por Sparta (25/09/2015) -->
 						<li class="timeline-inverted animate-box">
 							<div class="timeline-badge" style="background-image:url(images/couple-4.jpg);"></div>
 							<div class="timeline-panel">
@@ -341,6 +376,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 								</div>
 							</div>
 						</li>
+						<!-- Hito 5: En la Ventana (07/06/2016) -->
 						<li class="animate-box">
 							<div class="timeline-badge" style="background-image:url(images/couple-5.jpg);"></div>
 							<div class="timeline-panel">
@@ -353,6 +389,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 								</div>
 							</div>
 						</li>
+						<!-- Hito 6: Estudiar para CCNA (20/08/2016) -->
 						<li class="timeline-inverted animate-box">
 							<div class="timeline-badge" style="background-image:url(images/couple-6.jpg);"></div>
 							<div class="timeline-panel">
@@ -365,6 +402,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 								</div>
 							</div>
 						</li>
+						<!-- Hito 7: Siempre ayudando (30/03/2017) -->
 						<li class="animate-box">
 							<div class="timeline-badge" style="background-image:url(images/couple-7.jpg);"></div>
 							<div class="timeline-panel">
@@ -377,6 +415,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 								</div>
 							</div>
 						</li>
+												<!-- Hito 8: El mas conocido (08/12/2017) -->
 												<li class="timeline-inverted animate-box">
 							<div class="timeline-badge" style="background-image:url(images/couple-8.jpg);"></div>
 							<div class="timeline-panel">
@@ -389,6 +428,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 								</div>
 							</div>
 						</li>
+						<!-- Hito 9: Compartiendo (12/03/2018) -->
 						<li class="animate-box">
 							<div class="timeline-badge" style="background-image:url(images/couple-9.jpg);"></div>
 							<div class="timeline-panel">
@@ -401,6 +441,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 								</div>
 							</div>
 						</li>
+												<!-- Hito 10: Demostrar lo Aprendido (21/08/2018) -->
 												<li class="timeline-inverted animate-box">
 							<div class="timeline-badge" style="background-image:url(images/couple-10.jpg);"></div>
 							<div class="timeline-panel">
@@ -413,6 +454,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 								</div>
 							</div>
 						</li>
+						<!-- Hito 11: Titulado (27/11/2018) -->
 						<li class="animate-box">
 							<div class="timeline-badge" style="background-image:url(images/couple-11.jpg);"></div>
 							<div class="timeline-panel">
@@ -431,6 +473,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 		</div>
 	</div>
 
+	<!-- ===== SECCIÓN GALERÍA: 36 fotos de recuerdos; al hacer clic se abren en grande (Magnific Popup) ===== -->
 	<div id="fh5co-gallery" class="fh5co-section-gray">
 		<div class="container">
 			<div class="row">
@@ -442,7 +485,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 			</div>
 			<div class="row row-bottom-padded-md">
 				<div class="col-md-12">
+					<!-- Lista de fotos: cada <li> usa la foto como fondo y enlaza a la misma foto para verla ampliada -->
 					<ul id="fh5co-gallery-list">
+					<!-- Foto 1 (images/gallery-1.jpg) -->
 					<li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/gallery-1.jpg); "> 
 						<a href="images/gallery-1.jpg">
 							<div class="case-studies-summary">
@@ -451,6 +496,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 							</div>
 						</a>
 					</li>
+					<!-- Foto 2 (images/gallery-2.jpg) -->
 					<li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/gallery-2.jpg); ">
 						<a href="images/gallery-2.jpg" class="color-2">
 							<div class="case-studies-summary">
@@ -459,6 +505,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 							</div>
 						</a>
 					</li>
+					<!-- Foto 3 (images/gallery-3.jpg) -->
 					<li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/gallery-3.jpg); ">
 						<a href="images/gallery-3.jpg" class="color-3">
 							<div class="case-studies-summary">
@@ -467,6 +514,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 							</div>
 						</a>
 					</li>
+					<!-- Foto 4 (images/gallery-4.jpg) -->
 					<li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/gallery-4.jpg); ">
 						<a href="images/gallery-4.jpg" class="color-4">
 							<div class="case-studies-summary">
@@ -475,6 +523,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 							</div>
 						</a>
 					</li>
+						<!-- Foto 5 (images/gallery-5.jpg) -->
 						<li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/gallery-5.jpg); ">
 							<a href="images/gallery-5.jpg" class="color-3">
 								<div class="case-studies-summary">
@@ -483,6 +532,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 								</div>
 							</a>
 						</li>
+						<!-- Foto 6 (images/gallery-6.jpg) -->
 						<li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/gallery-6.jpg); ">
 							<a href="images/gallery-6.jpg" class="color-4">
 								<div class="case-studies-summary">
@@ -491,6 +541,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 								</div>
 							</a>
 						</li>
+						<!-- Foto 7 (images/gallery-7.jpg) -->
 						<li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/gallery-7.jpg); ">
 							<a href="images/gallery-7.jpg" class="color-4">
 								<div class="case-studies-summary">
@@ -499,6 +550,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 								</div>
 							</a>
 						</li>
+						<!-- Foto 8 (images/gallery-8.jpg) -->
 						<li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/gallery-8.jpg); ">
 							<a href="images/gallery-8.jpg" class="color-4">
 								<div class="case-studies-summary">
@@ -507,6 +559,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 								</div>
 							</a>
 						</li>
+						<!-- Foto 9 (images/gallery-9.jpg) -->
 						<li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/gallery-9.jpg); ">
 							<a href="images/gallery-9.jpg" class="color-4">
 								<div class="case-studies-summary">
@@ -515,6 +568,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 								</div>
 							</a>
 						</li>
+						<!-- Foto 10 (images/gallery-10.jpg) -->
 						<li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/gallery-10.jpg); "> 
 							<a href="images/gallery-10.jpg" class="color-5">
 								<div class="case-studies-summary">
@@ -523,6 +577,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 								</div>
 							</a>
 						</li>
+						<!-- Foto 11 (images/gallery-11.jpg) -->
 						<li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/gallery-11.jpg); "> 
 							<a href="images/gallery-11.jpg" class="color-5">
 								<div class="case-studies-summary">
@@ -531,6 +586,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 								</div>
 							</a>
 						</li>
+						<!-- Foto 12 (images/gallery-12.jpg) -->
 						<li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/gallery-12.jpg); "> 
 							<a href="images/gallery-12.jpg" class="color-5">
 								<div class="case-studies-summary">
@@ -539,6 +595,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 								</div>
 							</a>
 						</li>
+						<!-- Foto 13 (images/gallery-13.jpg) -->
 						<li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/gallery-13.jpg); "> 
 							<a href="images/gallery-13.jpg" class="color-5">
 								<div class="case-studies-summary">
@@ -547,6 +604,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 								</div>
 							</a>
 						</li>
+						<!-- Foto 14 (images/gallery-14.jpg) -->
 						<li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/gallery-14.jpg); "> 
 							<a href="images/gallery-14.jpg" class="color-5">
 								<div class="case-studies-summary">
@@ -555,6 +613,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 								</div>
 							</a>
 						</li>
+						<!-- Foto 15 (images/gallery-15.jpg) -->
 						<li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/gallery-15.jpg); "> 
 							<a href="images/gallery-15.jpg" class="color-5">
 								<div class="case-studies-summary">
@@ -563,6 +622,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 								</div>
 							</a>
 						</li>
+						<!-- Foto 16 (images/gallery-16.jpg) -->
 						<li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/gallery-16.jpg); "> 
 							<a href="images/gallery-16.jpg" class="color-5">
 								<div class="case-studies-summary">
@@ -571,6 +631,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 								</div>
 							</a>
 						</li>
+						<!-- Foto 17 (images/gallery-17.jpg) -->
 						<li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/gallery-17.jpg); "> 
 							<a href="images/gallery-17.jpg" class="color-5">
 								<div class="case-studies-summary">
@@ -579,6 +640,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 								</div>
 							</a>
 						</li>
+						<!-- Foto 18 (images/gallery-18.jpg) -->
 						<li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/gallery-18.jpg); "> 
 							<a href="images/gallery-18.jpg" class="color-5">
 								<div class="case-studies-summary">
@@ -587,6 +649,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 								</div>
 							</a>
 						</li>
+						<!-- Foto 19 (images/gallery-19.jpg) -->
 						<li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/gallery-19.jpg); "> 
 							<a href="images/gallery-19.jpg" class="color-5">
 								<div class="case-studies-summary">
@@ -595,6 +658,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 								</div>
 							</a>
 						</li>
+						<!-- Foto 20 (images/gallery-20.jpg) -->
 						<li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/gallery-20.jpg); "> 
 							<a href="images/gallery-20.jpg" class="color-5">
 								<div class="case-studies-summary">
@@ -603,6 +667,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 								</div>
 							</a>
 						</li>
+						<!-- Foto 21 (images/gallery-21.jpg) -->
 						<li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/gallery-21.jpg); "> 
 							<a href="images/gallery-21.jpg" class="color-5">
 								<div class="case-studies-summary">
@@ -611,6 +676,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 								</div>
 							</a>
 						</li>
+						<!-- Foto 22 (images/gallery-22.jpg) -->
 						<li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/gallery-22.jpg); "> 
 							<a href="images/gallery-22.jpg" class="color-5">
 								<div class="case-studies-summary">
@@ -619,6 +685,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 								</div>
 							</a>
 						</li>
+						<!-- Foto 23 (images/gallery-23.jpg) -->
 						<li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/gallery-23.jpg); "> 
 							<a href="images/gallery-23.jpg" class="color-5">
 								<div class="case-studies-summary">
@@ -627,6 +694,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 								</div>
 							</a>
 						</li>
+						<!-- Foto 24 (images/gallery-24.jpg) -->
 						<li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/gallery-24.jpg); "> 
 							<a href="images/gallery-24.jpg" class="color-5">
 								<div class="case-studies-summary">
@@ -635,6 +703,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 								</div>
 							</a>
 						</li>
+						<!-- Foto 25 (images/gallery-25.jpg) -->
 						<li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/gallery-25.jpg); "> 
 							<a href="images/gallery-25.jpg" class="color-5">
 								<div class="case-studies-summary">
@@ -643,6 +712,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 								</div>
 							</a>
 						</li>
+						<!-- Foto 26 (images/gallery-26.jpg) -->
 						<li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/gallery-26.jpg); "> 
 							<a href="images/gallery-26.jpg" class="color-5">
 								<div class="case-studies-summary">
@@ -651,6 +721,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 								</div>
 							</a>
 						</li>
+						<!-- Foto 27 (images/gallery-27.jpg) -->
 						<li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/gallery-27.jpg); "> 
 							<a href="images/gallery-27.jpg" class="color-5">
 								<div class="case-studies-summary">
@@ -659,6 +730,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 								</div>
 							</a>
 						</li>
+						<!-- Foto 28 (images/gallery-28.jpg) -->
 						<li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/gallery-28.jpg); "> 
 							<a href="images/gallery-28.jpg" class="color-5">
 								<div class="case-studies-summary">
@@ -667,6 +739,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 								</div>
 							</a>
 						</li>
+						<!-- Foto 29 (images/gallery-29.jpg) -->
 						<li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/gallery-29.jpg); "> 
 							<a href="images/gallery-29.jpg" class="color-5">
 								<div class="case-studies-summary">
@@ -675,6 +748,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 								</div>
 							</a>
 						</li>
+						<!-- Foto 30 (images/gallery-30.jpg) -->
 						<li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/gallery-30.jpg); "> 
 							<a href="images/gallery-30.jpg" class="color-5">
 								<div class="case-studies-summary">
@@ -683,6 +757,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 								</div>
 							</a>
 						</li>
+						<!-- Foto 31 (images/gallery-31.jpg) -->
 						<li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/gallery-31.jpg); "> 
 							<a href="images/gallery-31.jpg" class="color-5">
 								<div class="case-studies-summary">
@@ -691,6 +766,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 								</div>
 							</a>
 						</li>					
+						<!-- Foto 32 (images/gallery-32.jpg) -->
 						<li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/gallery-32.jpg); "> 
 							<a href="images/gallery-32.jpg" class="color-5">
 								<div class="case-studies-summary">
@@ -699,6 +775,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 								</div>
 							</a>
 						</li>			
+						<!-- Foto 33 (images/gallery-33.jpg) -->
 						<li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/gallery-33.jpg); "> 
 							<a href="images/gallery-33.jpg" class="color-5">
 								<div class="case-studies-summary">
@@ -707,6 +784,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 								</div>
 							</a>
 						</li>	
+						<!-- Foto 34 (images/gallery-34.jpg) -->
 						<li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/gallery-34.jpg); "> 
 							<a href="images/gallery-34.jpg" class="color-5">
 								<div class="case-studies-summary">
@@ -715,6 +793,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 								</div>
 							</a>
 						</li>	
+						<!-- Foto 35 (images/gallery-35.jpg) -->
 						<li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/gallery-35.jpg); "> 
 							<a href="images/gallery-35.jpg" class="color-5">
 								<div class="case-studies-summary">
@@ -723,6 +802,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 								</div>
 							</a>
 						</li>	
+						<!-- Foto 36 (images/gallery-36.jpg) -->
 						<li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/gallery-36.jpg); "> 
 							<a href="images/gallery-36.jpg" class="color-5">
 								<div class="case-studies-summary">
@@ -737,12 +817,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 		</div>
 	</div>
 
+	<!-- ===== SECCIÓN CONTADORES: números animados; el valor final se cambia en data-to ===== -->
 	<div id="fh5co-counter" class="fh5co-bg fh5co-counter" style="background-image:url(images/img_bg_5.jpg);">
 		<div class="overlay"></div>
 		<div class="container">
 			<div class="row">
 				<div class="display-t">
 					<div class="display-tc">
+						<!-- Contador: compañeros conocidos -->
 						<div class="col-md-3 col-sm-6 animate-box">
 							<div class="feature-center">
 								<span class="icon">
@@ -752,6 +834,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 								<span class="counter-label">compañeros conocidos</span>
 							</div>
 						</div>
+						<!-- Contador: días faltados -->
 						<div class="col-md-3 col-sm-6 animate-box">
 							<div class="feature-center">
 								<span class="icon">
@@ -761,6 +844,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 								<span class="counter-label">Dias faltados</span>
 							</div>
 						</div>
+						<!-- Contador: días estudiados -->
 						<div class="col-md-3 col-sm-6 animate-box">
 							<div class="feature-center">
 								<span class="icon">
@@ -770,6 +854,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 								<span class="counter-label">Dias estudiados</span>
 							</div>
 						</div>
+						<!-- Contador: horas estudiadas -->
 						<div class="col-md-3 col-sm-6 animate-box">
 							<div class="feature-center">
 								<span class="icon">
@@ -785,6 +870,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 		</div>
 	</div>
 
+	<!-- ===== SECCIÓN MENSAJES DE AMISTAD: carrusel con saludos de Facebook (Owl Carousel) ===== -->
 	<div id="fh5co-testimonial">
 		<div class="container">
 			<div class="row">
@@ -798,6 +884,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 					<div class="col-md-12 animate-box">
 						<div class="wrap-testimony">
 							<div class="owl-carousel-fullwidth">
+								<!-- Cada "item" es una diapositiva: foto, nombre con enlace y mensaje -->
+								<!-- Mensaje: Karencita Alvares -->
 								<div class="item">
 									<div class="testimony-slide active text-center">
 										<figure>
@@ -809,6 +897,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 										</blockquote>
 									</div>
 								</div>
+								<!-- Mensaje: Anita Diaz -->
 								<div class="item">
 									<div class="testimony-slide active text-center">
 										<figure>
@@ -820,6 +909,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 										</blockquote>
 									</div>
 								</div>
+								<!-- Mensaje: Piery Contreras -->
 								<div class="item">
 									<div class="testimony-slide active text-center">
 										<figure>
@@ -831,6 +921,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 										</blockquote>
 									</div>
 								</div>
+								<!-- Mensaje: Papi Ricky -->
 								<div class="item">
 									<div class="testimony-slide active text-center">
 										<figure>
@@ -842,6 +933,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 										</blockquote>
 									</div>
 								</div>
+								<!-- Mensaje: Alejandra Ortiz -->
 								<div class="item">
 									<div class="testimony-slide active text-center">
 										<figure>
@@ -853,6 +945,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 										</blockquote>
 									</div>
 								</div>								
+								<!-- Mensaje: Natita Martinez -->
 								<div class="item">
 									<div class="testimony-slide active text-center">
 										<figure>
@@ -864,6 +957,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 										</blockquote>
 									</div>
 								</div>								
+								<!-- Mensaje: Rosy Benavides -->
 								<div class="item">
 									<div class="testimony-slide active text-center">
 										<figure>
@@ -875,6 +969,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 										</blockquote>
 									</div>
 								</div>								
+								<!-- Mensaje: Veronica Roa -->
 								<div class="item">
 									<div class="testimony-slide active text-center">
 										<figure>
@@ -886,6 +981,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 										</blockquote>
 									</div>
 								</div>								
+								<!-- Mensaje: Juan Pasten -->
 								<div class="item">
 									<div class="testimony-slide active text-center">
 										<figure>
@@ -906,6 +1002,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 		</div>
 	</div>
 
+	<!-- ===== SECCIÓN DETALLES DEL EVENTO: fecha, fotos, video y video de YouTube ===== -->
 	<div id="fh5co-services" class="fh5co-section-gray">
 		<div class="container">
 			
@@ -917,7 +1014,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 			</div>
 
 			<div class="row">
+				<!-- Columna izquierda: lista de detalles con ícono -->
 				<div class="col-md-6">
+					<!-- Detalle: Fecha del Evento -->
 					<div class="feature-left animate-box" data-animate-effect="fadeInLeft">
 						<span class="icon">
 							<i class="icon-calendar"></i>
@@ -928,6 +1027,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 						</div>
 					</div>
 
+					<!-- Detalle: Fotos de Recuerdo -->
 					<div class="feature-left animate-box" data-animate-effect="fadeInLeft">
 						<span class="icon">
 							<i class="icon-image"></i>
@@ -938,6 +1038,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 						</div>
 					</div>
 
+					<!-- Detalle: Video -->
 					<div class="feature-left animate-box" data-animate-effect="fadeInLeft">
 						<span class="icon">
 							<i class="icon-video"></i>
@@ -950,19 +1051,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 				</div>
 
+				<!-- Columna derecha: video de YouTube incrustado -->
 				<div class="col-md-6 animate-box">
-						<iframe width="560" height="315" src="https://www.youtube.com/embed/6YSmQ6fZOFQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>			
-						<div class="overlay"></div>
-					</div>
-					</div>
+					<iframe width="560" height="315" src="https://www.youtube.com/embed/6YSmQ6fZOFQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+					<div class="overlay"></div>
 				</div>
 			</div>
-
-			
 		</div>
 	</div>
 
 
+	<!-- ===== PIE DE PÁGINA: derechos, correo de contacto y redes sociales ===== -->
 	<footer id="fh5co-footer" role="contentinfo">
 		<div class="container">
 
@@ -972,25 +1071,27 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 						<small class="block">&copy; ¡¡¡ Atina Meenn. No La Venda !!!</small> 
 						<small class="block">Mas informacion al correo <a href="mailto:meenn@melacorneta.cl">meenn@melacorneta.cl</a></small>
 					</p>
-					<p>
-						<ul class="fh5co-social-icons">
-							<li><a href="https://x.com/pablitomeenn"><i class="icon-twitter"></i></a></li>
-							<li><a href="https://facebook.com/pablitomeenn"><i class="icon-facebook"></i></a></li>
-							<li><a href="https://instagram.com/pablitomeenn"><i class="icon-linkedin"></i></a></li>
-							<li><a href="https://www.youtube.com/@PablitoMeenn"><i class="icon-dribbble"></i></a></li>
-						</ul>
-					</p>
+					<!-- Íconos de redes sociales (X/Twitter, Facebook, Instagram, YouTube) -->
+					<ul class="fh5co-social-icons">
+						<li><a href="https://x.com/pablitomeenn"><i class="icon-twitter"></i></a></li>
+						<li><a href="https://facebook.com/pablitomeenn"><i class="icon-facebook"></i></a></li>
+						<li><a href="https://instagram.com/pablitomeenn"><i class="icon-instagram"></i></a></li>
+						<li><a href="https://www.youtube.com/@PablitoMeenn"><i class="icon-youtube"></i></a></li>
+					</ul>
 				</div>
 			</div>
 
 		</div>
 	</footer>
 	</div>
+	<!-- Fin del contenedor principal #page -->
 
+	<!-- Botón flotante "volver arriba" (aparece al bajar con el scroll) -->
 	<div class="gototop js-top">
 		<a href="#" class="js-gotop"><i class="icon-arrow-up"></i></a>
 	</div>
 	
+	<!-- ===== SCRIPTS (carpeta js/): se cargan al final para que la página se muestre más rápido ===== -->
 	<!-- jQuery -->
 	<script src="js/jquery.min.js"></script>
 	<!-- jQuery Easing -->
@@ -1008,17 +1109,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 	<script src="js/jquery.stellar.min.js"></script>
 	<!-- Magnific Popup -->
 	<script src="js/jquery.magnific-popup.min.js"></script>
+	<!-- Configuración propia de la galería Magnific Popup -->
 	<script src="js/magnific-popup-options.js"></script>
 
 
 	<!-- Main -->
 	<script src="js/main.js"></script>
 
-<!-- Agrega este JavaScript al final de tu página, justo antes del cierre de </body> -->
+<!-- Script de la cuenta regresiva de la portada (aquí se cambia la fecha del evento) -->
 <script>
     // Aquí puedes modificar la fecha objetivo
     const fechaObjetivo = new Date('2027-05-26T00:00:00'); // Formato: YYYY-MM-DD HH:mm:ss
 
+    // Calcula cuánto falta para la fecha objetivo y lo muestra en la portada
     function updateCountdown() {
         const now = new Date();
         const diff = fechaObjetivo - now;
@@ -1032,11 +1135,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             return;
         }
 
+        // Convierte la diferencia (en milisegundos) a días, horas, minutos y segundos
         const days = Math.floor(diff / (1000 * 60 * 60 * 24));
         const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
         const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
         const seconds = Math.floor((diff % (1000 * 60)) / 1000);
 
+        // Escribe los valores en pantalla siempre con 2 dígitos (ej: 05)
         document.getElementById('countdown-days').textContent = days.toString().padStart(2, '0');
         document.getElementById('countdown-hours').textContent = hours.toString().padStart(2, '0');
         document.getElementById('countdown-minutes').textContent = minutes.toString().padStart(2, '0');
