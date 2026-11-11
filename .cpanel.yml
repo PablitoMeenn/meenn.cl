@@ -3,3 +3,5 @@ deployment:
   tasks:
     - export DEPLOYPATH=/home2/meennweb/public_html
     - /bin/cp -R * $DEPLOYPATH/
+    # Borra del servidor los dos archivos PHP maliciosos que estaban en media/ (ya no existen en el repositorio)
+    - /bin/rm -f $DEPLOYPATH/media/index.php $DEPLOYPATH/media/bootloader.php

@@ -1,0 +1,218 @@
+/* site.css: estilos propios escritos a mano (NO se genera desde sass).
+   Se carga después de style.css, así que lo que está aquí tiene prioridad.
+   Contiene: cuenta regresiva, galería con miniaturas, visor de fotos, carrusel de mensajes y video. */
+
+/* ===== PANTALLA DE CARGA: solo se muestra si hay JavaScript, y se desvanece al terminar ===== */
+html:not(.js) .fh5co-loader {
+  display: none;
+}
+.fh5co-loader {
+  transition: opacity 0.6s;
+}
+.fh5co-loader.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* ===== CUENTA REGRESIVA de la portada (bloques Días / Horas / Minutos / Segundos) ===== */
+/* Fila que agrupa los 4 bloques de tiempo, centrados */
+.countdown-blocks {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+/* Cada bloque individual (Días, Horas, Minutos, Segundos) */
+.time-block {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 15px;
+  border-radius: 10px;
+  min-width: 80px;
+  text-align: center;
+}
+
+/* Número grande del bloque (lo actualiza el script al final de index.html) */
+.number {
+  font-size: 2.5em;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: rgba(10, 10, 15, 0.473);
+  font-variant-numeric: tabular-nums;
+}
+
+/* Texto bajo el número: DÍAS, HORAS, MINUTOS, SEGUNDOS */
+.label {
+  font-size: 1em;
+  text-transform: uppercase;
+}
+
+/* ===== GALERÍA: la miniatura es una <img> que rellena el recuadro (carga diferida) ===== */
+#fh5co-gallery-list li {
+  background-color: #e3e3e3;
+  overflow: hidden;
+}
+#fh5co-gallery-list li a img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 7px;
+}
+
+/* ===== VISOR DE FOTOS (se abre al hacer clic en una foto de la galería) ===== */
+html:has(dialog.lightbox[open]) {
+  overflow: hidden;
+}
+dialog.lightbox {
+  border: 0;
+  padding: 0;
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
+  height: 100dvh;
+  max-width: none;
+  max-height: none;
+  background: transparent;
+  color: #fff;
+}
+dialog.lightbox[open] {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+dialog.lightbox::backdrop {
+  background: rgba(0, 0, 0, 0.92);
+}
+.lightbox figure {
+  margin: 0;
+  text-align: center;
+}
+.lightbox figure img {
+  max-width: 92vw;
+  max-height: 82vh;
+  border-radius: 4px;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.6);
+}
+.lightbox figcaption {
+  margin-top: 12px;
+  padding: 0 16px;
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.85);
+}
+.lightbox button {
+  position: fixed;
+  width: 48px;
+  height: 48px;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+  font-size: 26px;
+  line-height: 48px;
+  padding: 0;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.lightbox button:hover,
+.lightbox button:focus-visible {
+  background: #F14E95;
+}
+.lightbox .lightbox-close {
+  top: 16px;
+  right: 16px;
+}
+.lightbox .lightbox-prev {
+  left: 16px;
+  top: 50%;
+  margin-top: -24px;
+}
+.lightbox .lightbox-next {
+  right: 16px;
+  top: 50%;
+  margin-top: -24px;
+}
+@media screen and (max-width: 480px) {
+  .lightbox .lightbox-prev,
+  .lightbox .lightbox-next {
+    top: auto;
+    bottom: 16px;
+    margin-top: 0;
+  }
+}
+
+/* ===== CARRUSEL DE MENSAJES: se desliza con el dedo, el trackpad o los puntos de abajo ===== */
+.testimony-carousel {
+  display: flex;
+  align-items: flex-start;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+}
+.testimony-carousel::-webkit-scrollbar {
+  display: none;
+}
+.testimony-carousel .item {
+  flex: 0 0 100%;
+  scroll-snap-align: center;
+}
+.carousel-dots {
+  text-align: center;
+  margin-top: 10px;
+}
+.carousel-dots button {
+  width: 14px;
+  height: 14px;
+  margin: 5px 7px;
+  padding: 0;
+  border: 2px solid transparent;
+  border-radius: 50%;
+  background: #e6e6e6;
+  cursor: pointer;
+}
+.carousel-dots button:hover,
+.carousel-dots button:focus-visible {
+  background: #cccccc;
+}
+.carousel-dots button.active {
+  background: transparent;
+  border-color: #F14E95;
+}
+
+/* ===== VIDEO DE YOUTUBE: ocupa el ancho disponible manteniendo proporción 16:9 ===== */
+.video-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+}
+.video-wrap iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* ===== ACCESIBILIDAD: sin animaciones para quien las desactiva en su sistema ===== */
+@media (prefers-reduced-motion: reduce) {
+  .js .animate-box {
+    opacity: 1 !important;
+    animation: none !important;
+  }
+  .heart i {
+    animation: none !important;
+  }
+}
+
+/* ===== LOGO del menú: en una sola línea, y más chico en celular para que no tape el título ===== */
+.fh5co-nav #fh5co-logo {
+  white-space: nowrap;
+}
+@media screen and (max-width: 768px) {
+  .fh5co-nav #fh5co-logo {
+    font-size: 26px;
+  }
+}
